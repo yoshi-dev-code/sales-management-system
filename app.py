@@ -110,4 +110,6 @@ def update(id):
 
     return '<p>更新しました</p><a href="/list">一覧に戻る</a>'
 
-app.run(debug=True)
+# app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
