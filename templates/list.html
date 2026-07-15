@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>売上一覧</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>売上一覧</h1>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>名前</th>
+            <th>売上</th>
+            <th>操作</th>
+        </tr>
+
+        {% for row in rows %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}円</td>
+            <td>
+                |
+                <a href="/edit/{{ row[0] }}">[✏ 編集]</a>
+                |
+                <a href="/delete/{{ row[0] }}">[🗑 削除]</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">検索ページに戻る</a>
+    <br>
+    <a href="/add">追加ページへ</a>
+</body>
+</html>

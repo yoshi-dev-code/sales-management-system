@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>売上管理システム</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+    <h1>売上管理システム</h1>
+
+    <p>顧客・売上を簡単に管理できるWebアプリ</p>
+
+    <form action="/search" method="post">
+
+        <input type="text" name="name">
+
+        <button>検索</button>
+
+    </form>
+
+    <br>
+
+<div class="menu">
+
+    <a href="/list">📋 売上一覧</a>
+
+    <a href="/add">➕ 売上追加</a>
+
+</div>
+
+</body>
+
+</html>

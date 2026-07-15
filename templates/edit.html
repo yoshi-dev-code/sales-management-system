@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>売上編集</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>売上編集</h1>
+
+<form action="/update/{{ row[0] }}" method="POST">
+    名前：
+    <input type="text" name="name" value="{{ row[1] }}">
+
+    <br><br>
+
+    売上：
+    <input type="number" name="sale" value="{{ row[2] }}">
+
+    <br><br>
+
+    <input type="submit" value="更新">
+</form>
+
+<br>
+<a href="/list">一覧に戻る</a>
+
+</body>
+</html>
